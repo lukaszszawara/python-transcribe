@@ -1,0 +1,20 @@
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = ["E", "F", "W", "I", "B", "SIM", "UP", "RUF"]
+ignore = [
+    "B008",   # Depends() w defaultach to zalecany wzorzec FastAPI
+    "SIM105", # contextlib.suppress bywa mniej czytelne niż try/except
+    "E501",   # długość linii pilnuje formatter
+    "RUF001", # polskie cudzysłowy i myślniki w napisach dla napisów są celowe
+    "RUF002",
+    "RUF003",
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["E402", "B011"]
+"app/services/audio.py" = ["B008"]
+
+[format]
+quote-style = "double"

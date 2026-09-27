@@ -1,0 +1,45 @@
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# testy i lintowanie
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# konfiguracja lokalna
+.env
+.env*.local
+
+# baza danych SQLite tworzona przez init_db()
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# wagi Whispera pobierane przez `python -m scripts.warmup`
+# (whisper.load_model z download_root=settings.whisper_model_dir)
+models/
+
+# audio testowe generowane przez scripts/make_sample_audio.sh
+# oraz katalogi przebiegów z scripts/local_run.sh
+tmp/*
+!tmp/.gitkeep
+
+# logi runtime
+logs/*.log
+
+# artefakty systemowe
+.DS_Store
+*.pem
